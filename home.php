@@ -19,14 +19,58 @@ session_start();
                 <a href="#">Home</a>
                 <a href="#">Shop</a>
                 <a href="#">Contact Us</a>
+            
+                
 
-                <?php if (!isset($_SESSION['pseudo'])){  
-                    echo"<button class='Login' >Login</button>";
-                    echo"<button class='Register' >Register</button>";
-                    else{  
-                   echo" <a href='#'>Profil</a>";
-                 echo"   <a href='#'>Log Out</a>";
-                } ?>
+                  <?php if (!isset($_SESSION['pseudo'])){  
+                    echo"<a href='http://localhost:8888/ALL4SPORT/connexion.php' >Login</a>";
+                    echo"<a href='http://localhost:8888/ALL4SPORT/inscription.php' >Register</a>";
+                    } else {  
+                        
+                    echo" <img src='img/user.png' class='user-pic' onclick='toggleMenu()'>
+                          <div class='sub-menu-wrap' id='subMenu'> 
+                            <div class='sub-menu'>
+                                <div class='user-info'>
+                                    <img src='img/user.png'>
+                                    <h2> Simon Ravaut </h2>
+                                </div>
+                                <hr>
+
+                                <a href='#' class='sub-menu-link'>
+                                    <img src='img/profile.png'>
+                                    <p> Edit Profile </p>
+                                    <span>><span>
+                                </a>
+
+                                <a href='#' class='sub-menu-link'>
+                                    <img src='img/setting.png'>
+                                    <p> Settings </p>
+                                    <span>><span>
+                                </a>
+
+                                <a href='#' class='sub-menu-link'>
+                                    <img src='img/help.png'>
+                                    <p> Help </p>
+                                    <span>><span>
+                                </a>
+
+                                <a href='http://localhost:8888/ALL4SPORT/connexion.php' class='sub-menu-link'>
+                                    <img src='img/logout.png'>
+                                     <p> LogOut </p>
+                                    <span>><span>
+                                </a> ";
+                     } ?>
+
+                     <script>
+                        let subMenu = document.getElementById("subMenu");
+
+                        function toggleMenu() {
+                            subMenu.classList.toggle("open-menu");
+                        }
+                     </script>
+           
+                    
+                
             </div>
         </nav>
     </header>

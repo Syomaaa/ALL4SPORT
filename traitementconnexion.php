@@ -32,6 +32,7 @@ if(!empty($_POST['pseudo'])&& !empty($_POST['mdp']) )
 }
 
 if(!empty($res['pseudo'])){
+    $_SESSION['pseudo'] = $user;
     echo "Vous etes connecté !";
 } 
  else {
